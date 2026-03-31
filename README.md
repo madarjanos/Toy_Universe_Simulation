@@ -70,9 +70,10 @@ Ami lényeges, hogy hogyan állítsuk be a G és DT és EXPANSION_FACTOR paramé
 
 Tapasztalatom szerint olyan 1000-2000 részecskeszámnál (N), a DT kb. 1E-6*G és 1E-5*G között legyen.
 
-A tágulás lineáris, és a EXPANSION_FACTOR adja meg, hogy mennyit tágul egy időegység alatt. Tehát ha a DT = 1E-6 és az EXPANSION_FACTOR = 100, akkor egy időlépés (1E-6 időegység) alatt a tér 1E-4 távolságegységgel növekszik meg. Vagyis növekedne meg, ha úgy számolnánk, hogy a koordinátákat növeljük, de mint szó volt róla igazából a távolságokat csökkentjük a skálával.
+A tágulás lineáris, és a EXPANSION_FACTOR adja meg, hogy mennyit tágul egy időegység alatt. Tehát ha a DT = 1E-6 és az EXPANSION_FACTOR = 100, akkor egy időlépés (1E-6 időegység) alatt a tér 1E-4 távolságegységgel növekszik meg. Vagyis növekedne meg, ha úgy számolnánk, hogy a koordinátákat növeljük, de mint szó volt róla igazából az erőszámításkor skálázunk át (meg a sebességeket a DoExpansion-ban).
 
 Egyéb
 -----
 Animációt direkt nem tud csinálni a program. Helyette PNG képekbe tudja lementeni az előállított 2D/3D renderelt frame-eket. A Form1 vezérli az egészet. Jelenleg úgy van beállítva (ez is egy konstans), hogy 100 időlépés után csinál egy új képet, amit megjelenít az ablakban (képernyőn) és user választása szerint lementi PNG fájlba is, adott mappába.
+
 A PNG képekből (frame0000.png, frame0001.png, …) videót valamilyen külső programmal lehet csinálni. Ajánlom az ingyenes mplayer-t (mencoder)!
