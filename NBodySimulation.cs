@@ -19,7 +19,7 @@ class NBodySimulation : IDisposable
 #if _WRAPPED
     public readonly bool iswrapped = true;
 #else
-	public const bool iswrapped = false;
+	public readonly bool iswrapped = false;
 #endif
 
     //CPU dependent paramter (set to number of "performance" cores)
