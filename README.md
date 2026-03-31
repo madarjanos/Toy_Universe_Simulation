@@ -5,7 +5,8 @@ Bevezető
 Egy szokásos N-test szimuláció kiegészítve két extrával:
 -	A tér lehet wrapped (Pacman stílusú)
 -	Tágulhat a tér (kozmikus tágulás szimulációja)
-Továbbá csak CPU-ra van megoldva, de képes több szálon futni, hogy gyorsítsa a munkát. GPU-t sajnos nem tud.
+
+Jelenleg csak CPU-ra van megoldva, de képes több szálon futni, hogy gyorsítsa a munkát. GPU-t sajnos nem tud.
 
 Wrapped (Pacman) tér koordináták
 --------------------------------
