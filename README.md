@@ -66,9 +66,9 @@ A második kicsit cselesebb. Mivel a gyorsulás számolás belső ciklusa for j 
 Paraméterek
 -----------
 Az NBodySimulation elején van egy sor konstans paraméter, amiket be kell állítani egy konkrét futás előtt. A legtöbb paraméter magáért beszél.
-Ami lényeges, hogy hogyan állítsuk be a G és DT és EXPANSION_FACTOR paramétert. A G és DT önmagában nem jelent semmit, hiszen a szimuláció dimenziómentesített (nincs mértékegység). Ezért nem az számít, hogy konkrétan mennyi a G, hanem a G és DT aránya számít. Ha G kicsi, akkor DT lehet nagyobb és fordítva. A lényeg az, hogy elég kicsi legyen a DT, hogy egy időlépésben csak kicsit gyorsuljanak és mozogjanak a részecskék. Erre valamennyire a SOFTENING is hatással van, azt se szabad túl kicsire beállítani, túl nagy meg nem lesz elég realisztikus.
+Ami lényeges, hogy hogyan állítsuk be a G és DT és EXPANSION_FACTOR paramétert. A G és DT önmagában nem jelent semmit, hiszen a szimuláció dimenziómentesített (nincs mértékegység). Ezért nem az számít, hogy konkrétan mennyi a G, hanem a G és DT együtt számít. Ha G kicsi, akkor DT lehet nagyobb és fordítva. A lényeg az, hogy elég kicsi legyen a DT, hogy egy időlépésben csak kicsit gyorsuljanak és mozogjanak a részecskék. Erre valamennyire a SOFTENING is hatással van, azt se szabad túl kicsire beállítani, túl nagy meg nem lesz elég realisztikus.
 
-Tapasztalatom szerint olyan 1000-2000 részecskeszámnál (N), a DT kb. 1E-6*G és 1E-5*G között legyen.
+Tapasztalatom szerint olyan 1000-2000 részecskeszámnál (N), ha a G = 1, akkor DT kb. 1E-6 * G és 1E-5 * G között legyen. (Ha G csökken, kb. arányosan nőhet a DT, azt hiszem, de nem játszottam vele eleget...)
 
 A tágulás lineáris, és a EXPANSION_FACTOR adja meg, hogy mennyit tágul egy időegység alatt. Tehát ha a DT = 1E-6 és az EXPANSION_FACTOR = 100, akkor egy időlépés (1E-6 időegység) alatt a tér 1E-4 távolságegységgel növekszik meg. Vagyis növekedne meg, ha úgy számolnánk, hogy a koordinátákat növeljük, de mint szó volt róla igazából az erőszámításkor skálázunk át (meg a sebességeket a DoExpansion-ban).
 
