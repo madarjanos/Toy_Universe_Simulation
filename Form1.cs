@@ -141,9 +141,9 @@ namespace ToyUnivSimu
 
                 // 4. Put main information string onto the bitmap
                 string mode = use3D ? "3D" : "2D (X-Y)";
-                string text = $"IdılÈpÈs: {Nbody.timestep} " +
-                    $"Sk·lafaktor: {Nbody.scale:0.0} " +
-                    $"RÈszecskÈk sz·ma: {xcopy.Length} " +
+                string text = $"Id√µl√©p√©s: {Nbody.timestep} " +
+                    $"Sk√°lafaktor: {Nbody.scale:0.0} " +
+                    $"R√©szecsk√©k sz√°ma: {xcopy.Length} " +
                     $"[{mode}]";
                 using Font font = new Font("Consolas", 10f);
                 using SolidBrush textBrush = new SolidBrush(Color.White);
@@ -174,7 +174,7 @@ namespace ToyUnivSimu
             if (savePNG)
             {
                 string msg;
-                string fname = textBoxFolder.Text +
+                string fname = textBoxFolder.Text + "\\"
                     "frame" + pngcount.ToString("0000") + ".png";
                 try
                 {
@@ -373,13 +373,13 @@ namespace ToyUnivSimu
         private void buttonZoomIn_Click(object sender, EventArgs e)
         {
             zoomfactor *= 1.5;
-            renderstr = "(NagyÌt)";
+            renderstr = "(Nagy√≠t)";
         }
 
         private void buttonZoomOut_Click(object sender, EventArgs e)
         {
             zoomfactor /= 1.5;
-            renderstr = "(KicsinyÌt)";
+            renderstr = "(Kicsiny√≠t)";
         }
 
         private void buttonShiftYPlus_Click(object sender, EventArgs e)
@@ -427,7 +427,7 @@ namespace ToyUnivSimu
         private void button2D3D_Click(object sender, EventArgs e)
         {
             use3D = !use3D;
-            renderstr = "(V·lt 2D/3D)";
+            renderstr = "(V√°lt 2D/3D)";
         }
     }
 }
