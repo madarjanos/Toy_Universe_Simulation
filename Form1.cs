@@ -174,7 +174,7 @@ namespace ToyUnivSimu
             if (savePNG)
             {
                 string msg;
-                string fname = textBoxFolder.Text + "\\"
+                string fname = textBoxFolder.Text + "\\" +
                     "frame" + pngcount.ToString("0000") + ".png";
                 try
                 {
