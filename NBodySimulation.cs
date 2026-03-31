@@ -111,7 +111,7 @@ class NBodySimulation : IDisposable
 
 		// Work-balanced row slices for force calculation
 		// Pairs in rows [0, i):  P(i) = i*(2N - i - 1) / 2
-		// Invert to find cut points so each thread gets equal pair count
+		// Inverting to find cut points so each thread gets equal pair count
 		ForceStart = new int[NUM_THREADS];
 		ForceEnd = new int[NUM_THREADS];
 		double totalPairs = (double)N * (N - 1) / 2.0;
@@ -203,7 +203,7 @@ class NBodySimulation : IDisposable
 
 	// Step 2: force calculation into private accumulator buffers.
 	// Thread t owns rows [ForceStart[t], ForceEnd[t]); full upper triangle per row.
-	// Both +f (on i) and -f (on j) go into TBuf[t] only — no sharing, no races.
+	// Both +f (on i) and -f (on j) go into TBuf[t] only - no sharing, no races.
 	void DoForceCalculation(int t)
 	{
 		// Calculated accelration collector arrays
