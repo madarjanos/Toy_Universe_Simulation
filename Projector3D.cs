@@ -11,7 +11,7 @@ class Projector3D
     double eyeBaseDistance = 2.0; //enough large distance for starting
     double focalLength = 1.2;   // perspective "field of view" tuning
 
-    // Pre-computed orthonormal eye (camera) basis (set up in InitCamera)
+    // Pre-computed orthonormal eye (camera) basis (setup in InitViewpoint)
     double[] eyeForward; // eye's forward axis (toward fixed point, e.g. center)
     double[] eyeDir;     // oposite (direction of eye from fixed point)
     double[] eyeRight;   // eye's right axis
@@ -55,7 +55,7 @@ class Projector3D
     }
 
     // ---------------------------------------------------------------
-    // Viewpoint (eye / camera) initialisation
+    // Viewpoint (eye, camera) initialisation
     // ---------------------------------------------------------------
     void InitViewpoint()
     {
