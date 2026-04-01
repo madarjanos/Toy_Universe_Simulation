@@ -222,11 +222,11 @@ class NBodySimulation : IDisposable
 		// Maximum distance for gravitaion is calculated
 		//   It is neccessary for wrapped "pacman" universe for isotropy
 		//   For not wrapped universe we just define a large number
-		double grav_radius;
+		double grav_radius2;
 		if (iswrapped)
-			grav_radius = 0.5;
+			grav_radius2 = 0.5*0.5;
 		else
-			grav_radius = 20.0;
+			grav_radius2 = 20.0*20.0;
 
 		// Main force-accelration calculation loop:
 		int start_ix = ForceStart[t], end_ix = ForceEnd[t];
@@ -250,7 +250,7 @@ class NBodySimulation : IDisposable
 #endif
 				double dist2 = dx * dx + dy * dy + dz * dz + eps2_scaled;
 
-				if (dist2 > grav_radius) continue;
+				if (dist2 > grav_radius2) continue;
 
 				double invDist3 = 1.0 / (dist2 * Math.Sqrt(dist2));
 
